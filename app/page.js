@@ -4,19 +4,19 @@ import React, { useState, useEffect } from 'react';
 import { Card, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
-import { Globe, Mail, Phone, Clock, Shield, Server, ExternalLink, Copy, Check, Instagram } from 'lucide-react';
+import { Globe, Mail, Phone, Clock, Shield, ExternalLink, Copy, Check, Instagram } from 'lucide-react';
 
 export default function OTHDomainPlaceholder() {
   const [currentYear] = useState(new Date().getFullYear());
-  const [domainName, setDomainName] = useState('this-domain.com');
+  const [domainName, setDomainName] = useState('loading...');
   const [copied, setCopied] = useState(false);
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
     setMounted(true);
-    if (typeof window !== 'undefined') {
-      setDomainName(window.location.hostname);
-    }
+    // Get the actual domain name
+    const actualDomain = window.location.hostname;
+    setDomainName(actualDomain);
   }, []);
 
   const copyDomain = async () => {
@@ -47,17 +47,9 @@ export default function OTHDomainPlaceholder() {
         {/* Header */}
         <header className="text-center mb-12 px-2">
           <div className="mb-8">
-            <div className="flex items-center justify-center gap-2 sm:gap-4 mb-6">
-              <div className="p-2 sm:p-3 bg-white rounded-lg shadow-lg">
-                <Server className="w-8 h-8 sm:w-12 sm:h-12 text-black" />
-              </div>
-              <div className="text-left">
-                <h1 className="text-xl sm:text-4xl md:text-6xl font-bold text-white tracking-tight leading-tight">
-                  OvertimeHosting
-                </h1>
-                <div className="h-0.5 w-full bg-white opacity-60 mt-1 sm:mt-2" />
-              </div>
-            </div>
+            <h1 className="text-4xl sm:text-6xl md:text-8xl font-bold text-white tracking-tight leading-tight mb-6">
+              OvertimeHosting
+            </h1>
             <Badge variant="outline" className="text-xs sm:text-base px-3 py-1 sm:px-6 sm:py-2 border-white text-white bg-transparent hover:bg-white hover:text-black transition-colors">
               Domain Management System
             </Badge>
