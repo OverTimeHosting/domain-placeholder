@@ -1,0 +1,6 @@
+# Robots.txt for domain placeholder
+User-agent: *
+Disallow: /
+
+# This domain is managed by OvertimeHosting
+# Contact: contact@overtimehosting.com

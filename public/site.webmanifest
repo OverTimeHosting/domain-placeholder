@@ -1,0 +1,21 @@
+{
+  "name": "OvertimeHosting Domain Placeholder",
+  "short_name": "OTH Domain",
+  "description": "This domain is owned and managed by OvertimeHosting",
+  "icons": [
+    {
+      "src": "/company.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/company.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ],
+  "start_url": "/",
+  "display": "standalone",
+  "theme_color": "#000000",
+  "background_color": "#000000"
+}
